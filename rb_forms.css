@@ -1,0 +1,109 @@
+/*
+	New Perspectives on HTML and CSS, 7th Edition
+	Tutorial 7
+	Tutorial Case
+
+	Survey Forms Style Sheet
+	Author: Tristan Poss
+	Date: 10/20/2023
+
+	Filename:			rb_forms.css
+
+*/
+
+/* Form Layout Styles */
+form#survey {
+    display: flex;
+    -webkit-display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+}
+
+form#survey> fieldset {
+    background-color: rgb(241, 231, 181);
+    border-radius: 20px;
+    flex: 1 1 300px;
+    -webkit-flex: 1 1 300px;
+    font-size: .85em;
+    padding: 10px;
+    margin: 10px;
+}
+
+div.formRow {
+    display: flex;
+    -webkit-display: flex;
+    flex-flow: row wrap;
+    -webkit-flex-flow: row wrap;
+    margin: 7px 0px;
+}
+
+div.formRow > * {
+    flex: 1 1 150px;
+    -webkit-flex: 1 1 150;
+}
+
+
+/* Legend Styles */
+legend {
+    background-color: rgb(179, 20, 25);
+    color: white;
+    padding: 5px;
+}
+
+
+
+/* Text Area Styles */
+textarea {
+    margin-top: 10px;
+    height: 100px;
+    width: 95%;
+}
+
+
+/* Spinner Styles */
+div.formRow>input#dineSpin {
+    -webkit-flex: 0 0 50px;
+    flex: 0 0 50px;
+}
+
+
+
+/* Form Button Styles */
+
+#buttons {
+    text-align: center;
+    width: 100%;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    font-size: 1.2em;
+    padding: 5px;
+    margin: 15px;
+}
+
+
+/* Validation Styles */
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: rgb(146, 244, 146);
+}
+
+input#name:focus:valid,
+input#state:focus:valid,
+input#zip:focus:valid,
+input#phone:focus:valid,
+input#phone:focus:valid {
+    background: rgb(146, 244, 146) url(../images/rb_valid.png) bottom right/contain no-repeat;
+}
+
+input#name:focus:invalid,
+input#state:focus:invalid,
+input#zip:focus:invalid,
+input#phone:focus:invalid,
+input#phone:focus:invalid {
+    background: rgb(255, 154, 154) url(../images/rb_invalid.png) bottom right/contain no-repeat;
+}
+

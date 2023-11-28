@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!--
+		New Perspectives on HTML5 and CSS3, 7th Edition
+		Tutorial 7
+		Tutorial Case
+
+		Red Ball Pizza Survey Form
+		Author: Tristan Poss
+		Date:  10/20/2023
+
+		Filename:   rb_survey.html
+
+	-->
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Red Ball Survey</title>
+	<link href="rb_reset.css" rel="stylesheet">
+	<link href="rb_styles.css" rel="stylesheet">
+	<script src="rb_formsubmit.js"></script>
+	<link href="rb_forms.css" rel="stylesheet">
+
+</head>
+
+<body>
+	<header>
+		<img src="rb_logo.png" alt="Red Ball Pizza" id="logoimg">
+		<nav> 
+			<a id="navicon" href="#"><img src="rb_navicon.png" alt=""></a>
+			<ul>
+				<li><a href="#">home</a></li>
+				<li><a href="#">menu</a></li>
+				<li><a href="#">directions</a></li>
+				<li><a href="#">coupons</a></li>
+				<li><a href="#">orders</a></li>
+				<li><a href="#">catering</a></li>
+				<li><a href="#">reviews</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<h2>Customer Survey</h2>
+		<p>Thank you for taking our customer survey. Your response helps Red Ball Pizza maintain the tradition that has made us the top-rated pizzeria in the metro area. All participants are automatically entered into a monthly drawing to receive a <em>Red Ball Express PizzaFest</em> containing two large pizzas, a 2-liter soda, and a side order of chicken wings. Check your e-mail inbox for contest results. </p>
+		<p>Surveys are private and confidential. Red Ball Pizza will not share your contact information with third parties, <em>ever</em>. </p> <p>Required values are marked by an asterisk (*)</p>
+	<form id="survey" action="http://www.example.com/redball/survey" method="post" >
+	 <fieldset id="custInfo">
+	                <legend>Customer Information</legend>
+			  <div class="formRow">
+                    <label for="name">Name*</label>
+                    <input name="custName" id="name" type="text" placeholder="first and last name" required>
+                </div>
+                <div class="formRow">
+                    <label for="street">Street Address</label>
+                    <input type="text" name="custStreet" id="street">
+                </div>
+                <div class="formRow">
+                    <label for="City">City</label>
+                    <input type="text" id="city" name="custCity" value="Ormond Beach">
+                </div>
+                <div class="formRow">
+                    <label for="state">State</label>
+                    <input type="text" id="state" name="custCity" value="FL" maxlength="2" minlength="2">
+                </div>
+                <div class="formRow">
+                    <label for="zip">Postal Code</label>
+                    <input type="text" id="zip" name="custZip" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$">
+                </div>
+                <div class="formRow">
+                    <label for="tel">Phone Number</label>
+                    <input type="text" name="custPnone" id="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(d{3}\)\s*)?\d{3}[\s]?\d{4}$">
+                </div>
+                <div class="formRow">
+                    <label for="mail">E-mail*</label>
+                    <input type="email" name="custEmail" id="mail" placeholder="example@example.com" required>
+                </div>
+		<div class="formRow">
+                    <label for="info">Where did you here about Us?<br>(select all that apply)</label>
+                    <select name="infosrc" id="info" size="5" multiple>
+                        <option value="internet">Internet</option>
+                        <option value="mag">Magazine</option>
+                        <option value="news">Newspaper</option>
+                        <option value="word">Word of Mouth</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+	<div class="formRow">
+                    <label for="dish">What is your favorite dish?</label>
+                    <input type="text" name="favDish" id="dish" list="dishType">
+                    <datalist id="dishType">
+                      <option value="Antipasto Pizza"/>
+                      <option value="Big Kahuna Pizza"/>
+                      <option value="BBQ Chicken Pizza"/>
+                      <option value="Mediterranean Herb Pizza"/>
+                      <option value="Pasta Rolls"/>
+                      <option value="Pasto Artichoke Pizza"/>  
+                    </datalist>
+                </div>
+	<div class="formRow">
+                    <label for="dineSpin">How many time do you dine out per month</label>
+                    <input type="number" name="dineOut" id="dineSpin" value="1" step="1" min="0" max="20">
+                </div>
+	 <input type="checkbox" name="mailMe" value="yes" id="mailCB">
+                <label for="mailCB">Add me to your mailing list for great coupons and Specials!</label>
+	
+	
+</fieldset>
+	 <fieldset id="expInfo">
+	 		<legend>Share your Experience at Red Ball Pizza</legend>
+			<div class="formRow">
+                    <label for="visit">Date of Visit</label>
+                    <input type="date" id="visit" name="visitDate">
+                </div>
+
+                <div class="formRow">
+                    <label for="order">Order type</label>
+                    <select name="oderType" id="order">
+                        <option value="order1">Carry</option>
+                        <option value="order2">Delivery</option>
+                        <option value="order3" selected>Dine in</option>
+                        <option value="order4">Take n'bake</option>
+                    </select>
+		</div>
+		
+		<div class="formRow">
+                    <label for="">Was your service friendly?</label>
+                    <fieldset class="optGroup">
+                        <label for="fYes">Yes</label>
+                        <input type="radio" name="sFriend" value="yes" id="fYes">
+                        <label for="fNo">No</label>
+                        <input type="radio" name="sFriend" value="no" id="fNo">
+                    </fieldset>
+                </div>
+                <div class="formRow">
+                    <label for="">Was your order correct?</label>
+                    <fieldset class="optGroup">
+                        <label for="cYes">Yes</label>
+                        <input type="radio" name="oCorrect" value="yes" id="cYes">
+                        <label for="cNo">No</label>
+                        <input type="radio" name="oCorrect" value="no" id="cNo">
+                    </fieldset>
+                </div>
+                <div class="formRow">
+                    <label for="">Was your food hot?</label>
+                    <fieldset class="optGroup">
+                        <label for="hYes">Yes</label>
+                        <input type="radio" name="foodHot" value="yes" id="hYes">
+                        <label for="hNo">No</label>
+                        <input type="radio" name="foodHot" value="no" id="hNo">
+                    </fieldset>
+                </div>
+	 <div class="formRow">
+                    <label for="rangeBox">Rate the overall service<br>(0=poor; 10=great)</label>0
+                    <input type="range" name="serviceRate" id="rangeBox" value="5" step="1" min="0" max="10">10
+                </div>
+	 <label for="commBox">Tell us more a about your experience</label>
+                <textarea name="custExp" id="commBox"></textarea>
+
+	</fieldset>
+	 <div id="buttons">
+                <input type="submit" value="Submit my Survey">
+                <input type="reset" value="Cancel">
+            </div>
+	</form>
+		
+
+	</section>
+	<footer>
+		<h2>ORDER</h2>
+		<a href="#">Specials</a> <a href="#">Pizza</a> <a href="#">Pasta</a> <a href="#">Wings</a> <a href="#">Sides</a> <a href="#">Salads</a> <a href="#">Drinks</a> <a href="#">Desserts</a>
+		<h2>ABOUT US</h2>
+		<a href="#">Our Story</a> <a href="#">Blog</a> <a href="#">Catering</a> <a href="#">School Lunches</a>
+		<h2>CUSTOMER SERVICE</h2>
+		<a href="#">Gluten Free Crusts</a> <a href="#">Contact Us</a> <a href="#">FAQs</a>
+		<h2>MY ACCOUNT</h2>
+		<a href="#">Create an Account</a> <a href="#">Sign In</a> <a href="#">Order Status</a>
+		<h2>NUTRITION</h2>
+		<a href="#">Nutrition Information</a> <a href="#">Food Allergen</a> <a href="#">Gluten Free Pizza</a>
+		<h2>POLICIES</h2>
+		<a href="#">Privacy Policy</a> <a href="#">Terms of Use</a>
+		<address>
+		Red Ball Pizza <br>
+		811 Beach Drive <br>
+		Ormond Beach, FL  32175 <br>
+		(386) 555 - 7499
+		</address>
+	</footer>
+</body>
+</html>
